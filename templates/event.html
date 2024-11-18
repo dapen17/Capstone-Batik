@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event | Batik Tegalan</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <a href="{{ url_for('home') }}" class="logo">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo Batik Tegalan">
+                <h2>Batik Tegalan</h2>
+            </a>
+            <ul class="links">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('tentangbatik') }}">Tentang Batik</a></li>
+                <li><a href="{{ url_for('deteksi') }}">Deteksi</a></li>
+                <li><a href="{{ url_for('maping') }}">Maping</a></li>
+                <li><a href="{{ url_for('event') }}">Event</a></li>
+            </ul>
+            <button class="login-btn">LOG IN</button>
+        </nav>
+    </header>
+
+    <!-- Event Section -->
+    <section class="event-section">
+        <div class="container">
+            <h1>Event Batik Tegalan</h1>
+            <p>Temukan berbagai event menarik seputar Batik Tegalan di bawah ini.</p>
+            
+            <div class="event-list">
+                {% for event in events %}
+                <div class="event-card">
+                    <img src="{{ url_for('static', filename='images/' + event.image) }}" alt="{{ event.title }}">
+                    <div class="event-info">
+                        <h2>{{ event.title }}</h2>
+                        <p><strong>Tanggal:</strong> {{ event.date }}</p>
+                        <p>{{ event.short_description }}</p>
+                        <a href="{{ url_for('event_detail', event_id=event.id) }}" class="event-detail-btn">Selengkapnya</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</body>
+</html>

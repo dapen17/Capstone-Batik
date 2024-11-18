@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deteksi Batik | Batik Tegalan</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <a href="{{ url_for('home') }}" class="logo">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo Batik Tegalan">
+                <h2>Batik Tegalan</h2>
+            </a>
+            <ul class="links">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('tentangbatik') }}">Tentang Batik</a></li>
+                <li><a href="{{ url_for('deteksi') }}">Deteksi</a></li>
+                <li><a href="{{ url_for('maping') }}">Maping</a></li>
+                <li><a href="#">Event</a></li>
+                <li><a href="#">Kontak</a></li>
+            </ul>
+            <button class="login-btn">LOG IN</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Deteksi Batik Tegalan</h1>
+            <p>Unggah gambar batik Anda untuk mendeteksi dan mengetahui corak khas Batik Tegalan.</p>
+        </div>
+    </section>
+
+    <!-- Deteksi Section -->
+    <section class="deteksi-section">
+        <div class="content-box">
+            <h1>Deteksi Batik</h1>
+            <p>Unggah gambar batik Anda di bawah ini, lalu klik tombol "Deteksi" untuk mulai.</p>
+
+            <!-- Form Upload -->
+            <form class="upload-form" action="/deteksi" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="image-upload">Unggah Gambar:</label>
+                    <input type="file" id="image-upload" name="batik_image" accept="image/*" required>
+                </div>
+                <button type="submit" class="deteksi-btn">Deteksi</button>
+            </form>
+        </div>
+    </section>
+
+</body>
+</html>

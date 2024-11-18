@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Batik | Batik Tegalan</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <a href="{{ url_for('home') }}" class="logo">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo Batik Tegalan">
+                <h2>Batik Tegalan</h2>
+            </a>
+            <ul class="links">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('tentangbatik') }}">Tentang Batik</a></li>
+                <li><a href="{{ url_for('deteksi') }}">Deteksi</a></li>
+                <li><a href="#">Maping</a></li>
+                <li><a href="#">Event</a></li>
+                <li><a href="#">Kontak</a></li>
+            </ul>
+            <button class="login-btn">LOG IN</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Selamat Datang di Batik Tegalan</h1>
+            <p>Batik Tegalan adalah warisan budaya kaya akan seni dan sejarah, dengan corak khas yang menggambarkan keindahan alam Tegal.</p>
+            <button class="play-btn">Pelajari Lebih Lanjut</button>
+        </div>
+    </section>
+
+    <!-- Tentang Batik Section -->
+    <section class="about-section">
+        <div class="content-box">
+            <h1>Tentang Batik Tegalan</h1>
+            <p>Batik Tegalan adalah warisan budaya yang kaya akan nilai seni dan sejarah. Batik ini memiliki corak khas yang menggambarkan keindahan alam dan kehidupan masyarakat Tegal. Kami berkomitmen untuk melestarikan dan memperkenalkan batik Tegal kepada dunia.</p>
+        </div>
+    </section>
+
+    <!-- Galeri Batik Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <h2>Galeri Batik Tegalan</h2>
+            <div class="gallery-container">
+                <!-- Batik 1 -->
+                <div class="gallery-card">
+                    <img src="{{ url_for('static', filename='images/batik1.jpg') }}" alt="Batik 1">
+                    <div class="card-info">
+                        <h3>Batik 1</h3>
+                        <p>Deskripsi singkat mengenai batik 1.</p>
+                    </div>
+                </div>
+                <!-- Batik 2 -->
+                <div class="gallery-card">
+                    <img src="{{ url_for('static', filename='images/batik2.jpg') }}" alt="Batik 2">
+                    <div class="card-info">
+                        <h3>Batik 2</h3>
+                        <p>Deskripsi singkat mengenai batik 2.</p>
+                    </div>
+                </div>
+                <!-- Batik 3 -->
+                <div class="gallery-card">
+                    <img src="{{ url_for('static', filename='images/batik3.jpg') }}" alt="Batik 3">
+                    <div class="card-info">
+                        <h3>Batik 3</h3>
+                        <p>Deskripsi singkat mengenai batik 3.</p>
+                    </div>
+                </div>
+                <!-- Batik 4 -->
+                <div class="gallery-card">
+                    <img src="{{ url_for('static', filename='images/batik4.jpg') }}" alt="Batik 4">
+                    <div class="card-info">
+                        <h3>Batik 4</h3>
+                        <p>Deskripsi singkat mengenai batik 4.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
